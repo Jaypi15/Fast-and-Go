@@ -1,0 +1,551 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    android:orientation="vertical"
+    tools:context="go.and.fast.com.fastandgo.mainMenu.foodMenu.FoodScreen">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:tint="@android:color/white"
+            app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:id="@+id/FoodText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="casual"
+            android:padding="10dp"
+            android:text="@string/food"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:maxHeight="20dp"
+            android:minHeight="20dp"
+            android:padding="10dp"
+            android:tint="@android:color/white"
+            app:srcCompat="@drawable/ic_supervisor_account_black_24dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:orientation="horizontal">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/restaurantLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/filter_bg"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/restaurantTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:text="@string/restaurant"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/foodcourtLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/filter_bg"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/foodcourtTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:text="@string/food_courts"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cafeteriaLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/filter_bg"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/cafeteriaTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:text="@string/cafeteria"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fastfoodLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/filter_bg"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/fastfoodTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:text="@string/fast_food"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/buffetLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/filter_bg"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/buffetTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:text="@string/buffet"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/choices_bg"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:id="@+id/jollibeelogoLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/jollibee_logo"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_alignParentBottom="false"
+                            android:layout_alignParentEnd="false"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="false"
+                            android:padding="10dp"
+                            android:src="@drawable/jollibee_logo"
+                            app:civ_border_color="@android:color/background_light"
+                            app:civ_border_width="2dp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="false"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentStart="false"
+                        android:layout_alignParentTop="false"
+                        android:layout_margin="10dp"
+                        android:layout_toRightOf="@id/jollibeelogoLayout">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="false"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/NameTxt1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/chunkfive"
+                                android:paddingLeft="10dp"
+                                android:text="Jollibee"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:id="@+id/labelTxt1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Fast food chain"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="14sp" />
+
+                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/simpleRatingBar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srb_clearRatingEnabled="true"
+                                app:srb_clickable="true"
+                                app:srb_isIndicator="false"
+                                app:srb_minimumStars="1"
+                                app:srb_numStars="5"
+                                app:srb_rating="5"
+                                app:srb_scrollable="true"
+                                app:srb_starHeight="18dp"
+                                app:srb_starPadding="10dp"
+                                app:srb_starWidth="18dp"
+                                app:srb_stepSize="0.5"></com.willy.ratingbar.ScaleRatingBar>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/choices_bg"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:id="@+id/manginasallogoLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/manginasal_logo"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_alignParentBottom="false"
+                            android:layout_alignParentEnd="false"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="false"
+                            android:padding="10dp"
+                            android:src="@drawable/manginasallogo"
+                            app:civ_border_color="@android:color/background_light"
+                            app:civ_border_width="2dp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="false"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentStart="false"
+                        android:layout_alignParentTop="false"
+                        android:layout_margin="10dp"
+                        android:layout_toRightOf="@id/manginasallogoLayout">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="false"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/NameTxt2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/chunkfive"
+                                android:paddingLeft="10dp"
+                                android:text="Mang Inasal"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:id="@+id/labelTxt2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Fast food chain"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="14sp" />
+
+                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/simpleRatingBar2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srb_clearRatingEnabled="true"
+                                app:srb_clickable="true"
+                                app:srb_isIndicator="false"
+                                app:srb_minimumStars="1"
+                                app:srb_numStars="5"
+                                app:srb_rating="4"
+                                app:srb_scrollable="true"
+                                app:srb_starHeight="18dp"
+                                app:srb_starPadding="10dp"
+                                app:srb_starWidth="18dp"
+                                app:srb_stepSize="0.5"></com.willy.ratingbar.ScaleRatingBar>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/choices_bg"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:id="@+id/chowkinglogoLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/chowking_logo"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_alignParentBottom="false"
+                            android:layout_alignParentEnd="false"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="false"
+                            android:padding="10dp"
+                            android:src="@drawable/chowkinglogo"
+                            app:civ_border_color="@android:color/background_light"
+                            app:civ_border_width="2dp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="false"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentStart="false"
+                        android:layout_alignParentTop="false"
+                        android:layout_margin="10dp"
+                        android:layout_toRightOf="@id/chowkinglogoLayout">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="false"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/NameTxt3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/chunkfive"
+                                android:paddingLeft="10dp"
+                                android:text="Chowking"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:id="@+id/labelTxt4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Fast food chain"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="14sp" />
+
+                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/simpleRatingBar3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srb_clearRatingEnabled="true"
+                                app:srb_clickable="true"
+                                app:srb_isIndicator="false"
+                                app:srb_minimumStars="1"
+                                app:srb_numStars="5"
+                                app:srb_rating="3"
+                                app:srb_scrollable="true"
+                                app:srb_starHeight="18dp"
+                                app:srb_starPadding="10dp"
+                                app:srb_starWidth="18dp"
+                                app:srb_stepSize="0.5"></com.willy.ratingbar.ScaleRatingBar>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/choices_bg"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:id="@+id/mcdonaldlogoLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/mcdonald_logo"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_alignParentBottom="false"
+                            android:layout_alignParentEnd="false"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="false"
+                            android:padding="10dp"
+                            android:src="@drawable/mcdonaldlogo"
+                            app:civ_border_color="@android:color/background_light"
+                            app:civ_border_width="2dp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="false"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentStart="false"
+                        android:layout_alignParentTop="false"
+                        android:layout_margin="10dp"
+                        android:layout_toRightOf="@id/mcdonaldlogoLayout">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="false"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/NameTxt4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/chunkfive"
+                                android:paddingLeft="10dp"
+                                android:text="McDonalds"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:id="@+id/labelTxt5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Fast food chain"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="14sp" />
+
+                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/simpleRatingBar4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srb_clearRatingEnabled="true"
+                                app:srb_clickable="true"
+                                app:srb_isIndicator="false"
+                                app:srb_minimumStars="1"
+                                app:srb_numStars="5"
+                                app:srb_rating="5"
+                                app:srb_scrollable="true"
+                                app:srb_starHeight="18dp"
+                                app:srb_starPadding="10dp"
+                                app:srb_starWidth="18dp"
+                                app:srb_stepSize="0.5"></com.willy.ratingbar.ScaleRatingBar>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

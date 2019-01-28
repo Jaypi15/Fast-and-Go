@@ -2,10 +2,31 @@
     <string name="app_name">Fast &amp; Go</string>
 
     <!--Main Menu-->
-    <string name="medicines">Medicines</string>
-    <string name="bills_payment">Bills Payment</string>
-    <string name="fast_food">Foods</string>
-    <string name="transport">Transportation</string>
-    <string name="shopping">Shopping</string>
+    <string name="medicines">Pharmaceutical Services</string>
+    <string name="bills_payment">Bills Payment Services</string>
+    <string name="food">Food Services</string>
+    <string name="transport">Transportation Services</string>
+    <string name="shopping">Shopping Services</string>
+
+
+    <!--Food services filters-->
+    <string name="restaurant">Restaurants</string>
+    <string name="fast_food">Fast foods</string>
+    <string name="buffet">Buffet</string>
+    <string name="cafeteria">Cafeterias</string>
+    <string name="food_courts">Food Courts</string>
+
+    <!--Main menu tags-->
+    <string name="foodContainer_tag">foodContainer</string>
+    <string name="shopContainer_tag">shopContainer</string>
+    <string name="billsContainer_tag">billsContainer</string>
+    <string name="medicineContainer_tag">medicineContainer</string>
+    <string name="transpoContainer_tag">transpoContainer</string>
+
+    <string name="foodTxt_tag">foodTxt</string>
+    <string name="shopTxt_tag">shopTxt</string>
+    <string name="billsTxt_tag">billsTxt</string>
+    <string name="medicineTxt_tag">medicineTxt</string>
+    <string name="transpoTxt_tag">transpoTxt</string>
 
 </resources>
