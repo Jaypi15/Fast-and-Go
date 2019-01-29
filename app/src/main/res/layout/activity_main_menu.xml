@@ -47,164 +47,169 @@
 
     </RelativeLayout>
 
-    <ScrollView
+    <ListView
+        android:id="@+id/choices_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
-            <RelativeLayout
-                android:id="@+id/food_layout"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:alpha="0.9"
-                android:background="@drawable/fastfood">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_weight="1"
-                    android:alpha="0.7"
-                    android:background="@android:color/black"
-                    android:orientation="horizontal">
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/food_layout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="170dp"-->
+                <!--android:alpha="0.9"-->
+                <!--android:background="@drawable/fastfood">-->
 
-                    <TextView
-                        android:id="@+id/food_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/chunkfive"
-                        android:padding="10dp"
-                        android:text="@string/food"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/text_size" />
-                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:alpha="0.7"-->
+                    <!--android:background="@android:color/black"-->
+                    <!--android:orientation="horizontal">-->
 
-            </RelativeLayout>
+                    <!--<TextView-->
+                        <!--android:id="@+id/food_text"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:fontFamily="@font/chunkfive"-->
+                        <!--android:padding="10dp"-->
+                        <!--android:text="@string/food"-->
+                        <!--android:textColor="@android:color/white"-->
+                        <!--android:textSize="@dimen/text_size" />-->
+                <!--</LinearLayout>-->
 
-            <RelativeLayout
-                android:id="@+id/shopping_layout"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:alpha="0.9"
-                android:background="@drawable/shopping">
+            <!--</RelativeLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_weight="1"
-                    android:alpha="0.7"
-                    android:background="@android:color/black"
-                    android:orientation="horizontal">
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/shopping_layout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="170dp"-->
+                <!--android:alpha="0.9"-->
+                <!--android:background="@drawable/shopping">-->
 
-                    <TextView
-                        android:id="@+id/shopping_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/chunkfive"
-                        android:padding="10dp"
-                        android:text="@string/shopping"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/text_size" />
-                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:alpha="0.7"-->
+                    <!--android:background="@android:color/black"-->
+                    <!--android:orientation="horizontal">-->
 
-            </RelativeLayout>
+                    <!--<TextView-->
+                        <!--android:id="@+id/shopping_text"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:fontFamily="@font/chunkfive"-->
+                        <!--android:padding="10dp"-->
+                        <!--android:text="@string/shopping"-->
+                        <!--android:textColor="@android:color/white"-->
+                        <!--android:textSize="@dimen/text_size" />-->
+                <!--</LinearLayout>-->
 
-            <RelativeLayout
-                android:id="@+id/transpo_layout"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:alpha="0.9"
-                android:background="@drawable/transportation">
+            <!--</RelativeLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:alpha="0.7"
-                    android:background="@android:color/black"
-                    android:orientation="horizontal">
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/transpo_layout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="170dp"-->
+                <!--android:alpha="0.9"-->
+                <!--android:background="@drawable/transportation">-->
 
-                    <TextView
-                        android:id="@+id/transpo_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/chunkfive"
-                        android:padding="10dp"
-                        android:text="@string/transport"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/text_size" />
-                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:alpha="0.7"-->
+                    <!--android:background="@android:color/black"-->
+                    <!--android:orientation="horizontal">-->
 
-            </RelativeLayout>
+                    <!--<TextView-->
+                        <!--android:id="@+id/transpo_text"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:fontFamily="@font/chunkfive"-->
+                        <!--android:padding="10dp"-->
+                        <!--android:text="@string/transport"-->
+                        <!--android:textColor="@android:color/white"-->
+                        <!--android:textSize="@dimen/text_size" />-->
+                <!--</LinearLayout>-->
 
-            <RelativeLayout
-                android:id="@+id/payment_layout"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:alpha="0.9"
-                android:background="@drawable/billpayment">
+            <!--</RelativeLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_weight="1"
-                    android:alpha="0.7"
-                    android:background="@android:color/black"
-                    android:orientation="horizontal">
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/payment_layout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="170dp"-->
+                <!--android:alpha="0.9"-->
+                <!--android:background="@drawable/billpayment">-->
 
-                    <TextView
-                        android:id="@+id/payment_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/chunkfive"
-                        android:padding="10dp"
-                        android:text="@string/bills_payment"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/text_size" />
-                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:alpha="0.7"-->
+                    <!--android:background="@android:color/black"-->
+                    <!--android:orientation="horizontal">-->
 
-            </RelativeLayout>
+                    <!--<TextView-->
+                        <!--android:id="@+id/payment_text"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:fontFamily="@font/chunkfive"-->
+                        <!--android:padding="10dp"-->
+                        <!--android:text="@string/bills_payment"-->
+                        <!--android:textColor="@android:color/white"-->
+                        <!--android:textSize="@dimen/text_size" />-->
+                <!--</LinearLayout>-->
 
-            <RelativeLayout
-                android:id="@+id/medicine_layout"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:alpha="0.9"
-                android:background="@drawable/medicine">
+            <!--</RelativeLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_weight="1"
-                    android:alpha="0.7"
-                    android:background="@android:color/black"
-                    android:orientation="horizontal">
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/medicine_layout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="170dp"-->
+                <!--android:alpha="0.9"-->
+                <!--android:background="@drawable/medicine">-->
 
-                    <TextView
-                        android:id="@+id/medicine_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/chunkfive"
-                        android:padding="10dp"
-                        android:text="@string/medicines"
-                        android:textColor="@android:color/white"
-                        android:textSize="@dimen/text_size" />
-                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:alpha="0.7"-->
+                    <!--android:background="@android:color/black"-->
+                    <!--android:orientation="horizontal">-->
 
-            </RelativeLayout>
+                    <!--<TextView-->
+                        <!--android:id="@+id/medicine_text"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:fontFamily="@font/chunkfive"-->
+                        <!--android:padding="10dp"-->
+                        <!--android:text="@string/medicines"-->
+                        <!--android:textColor="@android:color/white"-->
+                        <!--android:textSize="@dimen/text_size" />-->
+                <!--</LinearLayout>-->
 
-        </LinearLayout>
-    </ScrollView>
+            <!--</RelativeLayout>-->
+
+        <!--</LinearLayout>-->
+    <!--</ScrollView>-->
 
 </LinearLayout>

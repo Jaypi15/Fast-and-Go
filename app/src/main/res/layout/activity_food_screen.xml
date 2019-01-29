@@ -241,21 +241,21 @@
                                 android:textColor="@android:color/darker_gray"
                                 android:textSize="14sp" />
 
-                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
-                                android:id="@+id/simpleRatingBar"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                app:srb_clearRatingEnabled="true"
-                                app:srb_clickable="true"
-                                app:srb_isIndicator="false"
-                                app:srb_minimumStars="1"
-                                app:srb_numStars="5"
-                                app:srb_rating="5"
-                                app:srb_scrollable="true"
-                                app:srb_starHeight="18dp"
-                                app:srb_starPadding="10dp"
-                                app:srb_starWidth="18dp"
-                                app:srb_stepSize="0.5"></com.willy.ratingbar.ScaleRatingBar>
+                            <!--<com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                                <!--android:id="@+id/simpleRatingBar"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--app:srb_clearRatingEnabled="true"-->
+                                <!--app:srb_clickable="true"-->
+                                <!--app:srb_isIndicator="false"-->
+                                <!--app:srb_minimumStars="1"-->
+                                <!--app:srb_numStars="5"-->
+                                <!--app:srb_rating="5"-->
+                                <!--app:srb_scrollable="true"-->
+                                <!--app:srb_starHeight="18dp"-->
+                                <!--app:srb_starPadding="10dp"-->
+                                <!--app:srb_starWidth="18dp"-->
+                                <!--app:srb_stepSize="0.5"></com.willy.ratingbar.ScaleRatingBar>-->
 
                         </LinearLayout>
 
@@ -334,21 +334,21 @@
                                 android:textColor="@android:color/darker_gray"
                                 android:textSize="14sp" />
 
-                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
-                                android:id="@+id/simpleRatingBar2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                app:srb_clearRatingEnabled="true"
-                                app:srb_clickable="true"
-                                app:srb_isIndicator="false"
-                                app:srb_minimumStars="1"
-                                app:srb_numStars="5"
-                                app:srb_rating="4"
-                                app:srb_scrollable="true"
-                                app:srb_starHeight="18dp"
-                                app:srb_starPadding="10dp"
-                                app:srb_starWidth="18dp"
-                                app:srb_stepSize="0.5"></com.willy.ratingbar.ScaleRatingBar>
+                            <!--<com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                                <!--android:id="@+id/simpleRatingBar2"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--app:srb_clearRatingEnabled="true"-->
+                                <!--app:srb_clickable="true"-->
+                                <!--app:srb_isIndicator="false"-->
+                                <!--app:srb_minimumStars="1"-->
+                                <!--app:srb_numStars="5"-->
+                                <!--app:srb_rating="4"-->
+                                <!--app:srb_scrollable="true"-->
+                                <!--app:srb_starHeight="18dp"-->
+                                <!--app:srb_starPadding="10dp"-->
+                                <!--app:srb_starWidth="18dp"-->
+                                <!--app:srb_stepSize="0.5"></com.willy.ratingbar.ScaleRatingBar>-->
 
                         </LinearLayout>
 
@@ -428,21 +428,21 @@
                                 android:textColor="@android:color/darker_gray"
                                 android:textSize="14sp" />
 
-                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
-                                android:id="@+id/simpleRatingBar3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                app:srb_clearRatingEnabled="true"
-                                app:srb_clickable="true"
-                                app:srb_isIndicator="false"
-                                app:srb_minimumStars="1"
-                                app:srb_numStars="5"
-                                app:srb_rating="3"
-                                app:srb_scrollable="true"
-                                app:srb_starHeight="18dp"
-                                app:srb_starPadding="10dp"
-                                app:srb_starWidth="18dp"
-                                app:srb_stepSize="0.5"></com.willy.ratingbar.ScaleRatingBar>
+                            <!--<com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                                <!--android:id="@+id/simpleRatingBar3"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--app:srb_clearRatingEnabled="true"-->
+                                <!--app:srb_clickable="true"-->
+                                <!--app:srb_isIndicator="false"-->
+                                <!--app:srb_minimumStars="1"-->
+                                <!--app:srb_numStars="5"-->
+                                <!--app:srb_rating="3"-->
+                                <!--app:srb_scrollable="true"-->
+                                <!--app:srb_starHeight="18dp"-->
+                                <!--app:srb_starPadding="10dp"-->
+                                <!--app:srb_starWidth="18dp"-->
+                                <!--app:srb_stepSize="0.5"></com.willy.ratingbar.ScaleRatingBar>-->
 
                         </LinearLayout>
 
@@ -522,21 +522,21 @@
                                 android:textColor="@android:color/darker_gray"
                                 android:textSize="14sp" />
 
-                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
-                                android:id="@+id/simpleRatingBar4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                app:srb_clearRatingEnabled="true"
-                                app:srb_clickable="true"
-                                app:srb_isIndicator="false"
-                                app:srb_minimumStars="1"
-                                app:srb_numStars="5"
-                                app:srb_rating="5"
-                                app:srb_scrollable="true"
-                                app:srb_starHeight="18dp"
-                                app:srb_starPadding="10dp"
-                                app:srb_starWidth="18dp"
-                                app:srb_stepSize="0.5"></com.willy.ratingbar.ScaleRatingBar>
+                            <!--<com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                                <!--android:id="@+id/simpleRatingBar4"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--app:srb_clearRatingEnabled="true"-->
+                                <!--app:srb_clickable="true"-->
+                                <!--app:srb_isIndicator="false"-->
+                                <!--app:srb_minimumStars="1"-->
+                                <!--app:srb_numStars="5"-->
+                                <!--app:srb_rating="5"-->
+                                <!--app:srb_scrollable="true"-->
+                                <!--app:srb_starHeight="18dp"-->
+                                <!--app:srb_starPadding="10dp"-->
+                                <!--app:srb_starWidth="18dp"-->
+                                <!--app:srb_stepSize="0.5"></com.willy.ratingbar.ScaleRatingBar>-->
 
                         </LinearLayout>
 
