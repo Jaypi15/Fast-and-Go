@@ -71,6 +71,9 @@ public class ServiceMenuListAdapter extends BaseAdapter {
         ScaleRatingBar scaleRatingBar = convertView.findViewById(R.id.ratingBar);
         scaleRatingBar.setRating(ratings.get(position));
         scaleRatingBar.setClickable(false);
+        scaleRatingBar.setActivated(false);
+        scaleRatingBar.setClickable(false);
+        scaleRatingBar.setScrollContainer(false);
 
         // set description
         TextView descriptionTxt = convertView.findViewById(R.id.descriptionTxt);

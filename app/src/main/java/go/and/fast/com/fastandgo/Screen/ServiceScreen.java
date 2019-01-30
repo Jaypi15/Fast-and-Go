@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -15,20 +16,19 @@ import java.util.Arrays;
 import go.and.fast.com.fastandgo.R;
 import go.and.fast.com.fastandgo.adapter.ServiceFilterListAdapter;
 import go.and.fast.com.fastandgo.adapter.ServiceMenuListAdapter;
+import go.and.fast.com.fastandgo.constants.AppConstants;
 import go.and.fast.com.fastandgo.utils.AppUtils;
 
 public class ServiceScreen extends AppCompatActivity {
 
-    // make static data for now
-    // TODO change to dynamic data if the app is already released
-    private static final ArrayList<String> FILTERS = new ArrayList<>(Arrays.asList("Restaurants","Fast Food Chains","Buffet","Food Courts","Cafeteria"));
-    private static final ArrayList<String> CHOICES = new ArrayList<>(Arrays.asList("Jollibee","Mc Donalds","Mang Inasal","Chowking"));
-    private static final ArrayList<Integer> IMAGES = new ArrayList<>(Arrays.asList(R.drawable.jollibee_logo, R.drawable.mcdonaldlogo, R.drawable.manginasallogo, R.drawable.chowkinglogo));
-    private static final ArrayList<Integer> RATINGS = new ArrayList<>(Arrays.asList(3, 4, 5, 4));
-    private String description = "Fast Food Chain"; // TODO make dymanamic
+    private String description; // TODO make dymanamic
+    private ArrayList<String> choices, filtrers;
+    private ArrayList<Integer> images;
+    private ArrayList<Integer> ratings;
 
     private ListView serviceList;
     private RecyclerView filterList;
+    private ImageView backBtn;
     RecyclerView.LayoutManager mLayoutManager;
     RecyclerView.Adapter mAdapter;
 
@@ -40,14 +40,25 @@ public class ServiceScreen extends AppCompatActivity {
 
         AppUtils.changeStatusBarColorToPrimaryColorTheme(this);
 
+        getExtras();
         createFilterListView();
         createServiceListView();
+
+        backBtn = findViewById(R.id.backBtn);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mainMenuIntent = new Intent(getApplicationContext(), MainMenuScreen.class);
+                startActivity(mainMenuIntent);
+            }
+        });
     }
 
     private void createServiceListView(){
         serviceList = findViewById(R.id.servicesList);
 
-        ServiceMenuListAdapter adapter = new ServiceMenuListAdapter(getApplicationContext(), CHOICES, IMAGES, RATINGS, description);
+        ServiceMenuListAdapter adapter = new ServiceMenuListAdapter(getApplicationContext(), choices, images, ratings, description);
 
         serviceList.setAdapter(adapter);
 
@@ -74,8 +85,18 @@ public class ServiceScreen extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         filterList.setLayoutManager(mLayoutManager);
 
-        mAdapter = new ServiceFilterListAdapter(getApplicationContext(), FILTERS);
+        mAdapter = new ServiceFilterListAdapter(getApplicationContext(), filtrers);
         filterList.setAdapter(mAdapter);
     }
+
+    private void getExtras(){
+        choices = (ArrayList<String>) getIntent().getSerializableExtra("choices");
+        images = (ArrayList<Integer>) getIntent().getSerializableExtra("images");
+        ratings = (ArrayList<Integer>) getIntent().getSerializableExtra("ratings");
+        filtrers = (ArrayList<String>) getIntent().getSerializableExtra("filters");
+        description = (String) getIntent().getSerializableExtra("description");
+    }
+
+
 
 }
