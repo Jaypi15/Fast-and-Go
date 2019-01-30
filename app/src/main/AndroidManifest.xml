@@ -21,7 +21,7 @@
 
         </activity>
         <activity
-            android:name=".mainMenu.MainMenu"
+            android:name=".Screen.MainMenuScreen"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".mainMenu.foodMenu.FoodScreen"
+            android:name=".Screen.ServiceScreen"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 

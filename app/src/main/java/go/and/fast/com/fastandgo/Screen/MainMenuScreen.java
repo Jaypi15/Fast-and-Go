@@ -1,4 +1,4 @@
-package go.and.fast.com.fastandgo.mainMenu;
+package go.and.fast.com.fastandgo.Screen;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,10 +12,9 @@ import java.util.Arrays;
 
 import go.and.fast.com.fastandgo.R;
 import go.and.fast.com.fastandgo.adapter.MainMenuListAdapter;
-import go.and.fast.com.fastandgo.mainMenu.foodMenu.FoodScreen;
 import go.and.fast.com.fastandgo.utils.AppUtils;
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenuScreen extends AppCompatActivity {
 
     private ListView listView;
 
@@ -27,7 +26,7 @@ public class MainMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
+        setContentView(R.layout.activity_main_menu_screen);
         AppUtils.changeStatusBarColorToPrimaryColorTheme(this);
 
         createListView();
@@ -45,7 +44,7 @@ public class MainMenu extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        Intent foodIntent = new Intent(getApplicationContext(), FoodScreen.class);
+                        Intent foodIntent = new Intent(getApplicationContext(), ServiceScreen.class);
                         startActivity(foodIntent);
                 }
             }

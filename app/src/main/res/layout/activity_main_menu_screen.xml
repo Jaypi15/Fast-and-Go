@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="go.and.fast.com.fastandgo.mainMenu.MainMenu">
+    tools:context="go.and.fast.com.fastandgo.Screen.MainMenuScreen">
 
 
     <RelativeLayout
@@ -50,7 +50,9 @@
     <ListView
         android:id="@+id/choices_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:dividerHeight="0dp"/>
 
     <!--<ScrollView-->
         <!--android:layout_width="match_parent"-->
