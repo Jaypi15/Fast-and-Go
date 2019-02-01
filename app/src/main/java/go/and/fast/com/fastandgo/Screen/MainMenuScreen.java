@@ -43,6 +43,7 @@ public class MainMenuScreen extends AppCompatActivity {
                         foodIntent.putExtra("filters", AppConstants.FOOD_FILTERS);
                         foodIntent.putExtra("ratings", AppConstants.FOOD_RATINGS);
                         foodIntent.putExtra("description", "Fast Food Chain");
+                        foodIntent.putExtra("screen title", "Food Services");
                         startActivity(foodIntent);
                         break;
                     case 1:// shopping services
@@ -52,6 +53,7 @@ public class MainMenuScreen extends AppCompatActivity {
                         shoppingIntent.putExtra("filters", AppConstants.SHOPPING_FILTERS);
                         shoppingIntent.putExtra("ratings", AppConstants.SHOPPING_RATINGS);
                         shoppingIntent.putExtra("description", "Clothing");
+                        shoppingIntent.putExtra("screen title", "Shopping Services");
                         startActivity(shoppingIntent);
                         break;
                     case 2:// foods services
@@ -61,6 +63,7 @@ public class MainMenuScreen extends AppCompatActivity {
                         transpoIntent.putExtra("filters", AppConstants.TRANSPO_FILTERS);
                         transpoIntent.putExtra("ratings", AppConstants.TRANSPO_RATINGS);
                         transpoIntent.putExtra("description", "Bus Company");
+                        transpoIntent.putExtra("screen title", "Transportation Services");
                         startActivity(transpoIntent);
                         break;
                     case 3:// foods services
@@ -70,6 +73,7 @@ public class MainMenuScreen extends AppCompatActivity {
                         billsIntent.putExtra("filters", AppConstants.BILLS_FILTERS);
                         billsIntent.putExtra("ratings", AppConstants.BILLS_RATINGS);
                         billsIntent.putExtra("description", "Network company");
+                        billsIntent.putExtra("screen title", "Bills Payment Services");
                         startActivity(billsIntent);
                         break;
                     case 4:// foods services
@@ -79,6 +83,7 @@ public class MainMenuScreen extends AppCompatActivity {
                         pharmaIntent.putExtra("filters", AppConstants.PHARMA_FILTERS);
                         pharmaIntent.putExtra("ratings", AppConstants.PHARMA_RATINGS);
                         pharmaIntent.putExtra("description", "Medicine");
+                        pharmaIntent.putExtra("screen title", "Pharmaceutical Services");
                         startActivity(pharmaIntent);
                         break;
                 }

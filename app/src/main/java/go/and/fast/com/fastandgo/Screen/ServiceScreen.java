@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +22,8 @@ import go.and.fast.com.fastandgo.utils.AppUtils;
 
 public class ServiceScreen extends AppCompatActivity {
 
-    private String description; // TODO make dymanamic
+    private String description;
+    private String screenTitle;
     private ArrayList<String> choices, filtrers;
     private ArrayList<Integer> images;
     private ArrayList<Integer> ratings;
@@ -29,6 +31,7 @@ public class ServiceScreen extends AppCompatActivity {
     private ListView serviceList;
     private RecyclerView filterList;
     private ImageView backBtn;
+    private TextView screenTitleTxt;
     RecyclerView.LayoutManager mLayoutManager;
     RecyclerView.Adapter mAdapter;
 
@@ -43,6 +46,9 @@ public class ServiceScreen extends AppCompatActivity {
         getExtras();
         createFilterListView();
         createServiceListView();
+
+        screenTitleTxt = findViewById(R.id.screenTitleTxt);
+        screenTitleTxt.setText(screenTitle);
 
         backBtn = findViewById(R.id.backBtn);
 
@@ -95,6 +101,7 @@ public class ServiceScreen extends AppCompatActivity {
         ratings = (ArrayList<Integer>) getIntent().getSerializableExtra("ratings");
         filtrers = (ArrayList<String>) getIntent().getSerializableExtra("filters");
         description = (String) getIntent().getSerializableExtra("description");
+        screenTitle = (String) getIntent().getSerializableExtra("screen title");
     }
 
 

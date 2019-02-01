@@ -27,7 +27,7 @@
             app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
 
         <TextView
-            android:id="@+id/FoodText"
+            android:id="@+id/screenTitleTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -38,15 +38,6 @@
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="22sp" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/imageView"
-            android:background="@color/colorPrimary"
-            android:tint="@android:color/white"
-            widget:srcCompat="@drawable/ic_shopping_cart_black_24dp" />
 
         <ImageView
             android:id="@+id/imageView"
