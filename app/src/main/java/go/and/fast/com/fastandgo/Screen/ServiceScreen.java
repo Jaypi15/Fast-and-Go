@@ -73,8 +73,9 @@ public class ServiceScreen extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        Intent foodIntent = new Intent(getApplicationContext(), ServiceScreen.class);
-                        startActivity(foodIntent);
+                        Intent mapIntent = new Intent(getApplicationContext(), MapScreen.class);
+                        mapIntent.putExtra("placeToFind", choices.get(position));
+                        startActivity(mapIntent);
                 }
             }
         });
