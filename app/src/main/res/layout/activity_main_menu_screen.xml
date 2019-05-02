@@ -45,18 +45,6 @@
             android:tint="@android:color/white"
             app:srcCompat="@drawable/ic_supervisor_account_black_24dp" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toStartOf="@+id/imageView2"
-            android:background="@color/colorPrimary"
-            android:maxHeight="20dp"
-            android:maxWidth="20dp"
-            android:tint="@android:color/white"
-            app:srcCompat="@drawable/ic_shopping_cart_black_24dp" />
-
     </RelativeLayout>
 
     <ListView

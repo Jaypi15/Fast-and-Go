@@ -13,27 +13,31 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import go.and.fast.com.fastandgo.R;
 import go.and.fast.com.fastandgo.adapter.ServiceFilterListAdapter;
 import go.and.fast.com.fastandgo.adapter.ServiceMenuListAdapter;
 import go.and.fast.com.fastandgo.constants.AppConstants;
+import go.and.fast.com.fastandgo.model.entity.Establishment;
+import go.and.fast.com.fastandgo.model.repository.EstablishmentRepository;
 import go.and.fast.com.fastandgo.utils.AppUtils;
 
 public class ServiceScreen extends AppCompatActivity {
 
-    private String description;
-    private String screenTitle;
-    private ArrayList<String> choices, filtrers;
-    private ArrayList<Integer> images;
-    private ArrayList<Integer> ratings;
-
+    private String type;
     private ListView serviceList;
     private RecyclerView filterList;
     private ImageView backBtn;
     private TextView screenTitleTxt;
     RecyclerView.LayoutManager mLayoutManager;
     RecyclerView.Adapter mAdapter;
+    private String screenTitle;
+
+    private List<Establishment> establishments;
+    private EstablishmentRepository establishmentRepository;
+    private List<String> filters;
+    private String description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,19 +68,25 @@ public class ServiceScreen extends AppCompatActivity {
     private void createServiceListView(){
         serviceList = findViewById(R.id.servicesList);
 
-        ServiceMenuListAdapter adapter = new ServiceMenuListAdapter(getApplicationContext(), choices, images, ratings, description);
+        ServiceMenuListAdapter adapter = new ServiceMenuListAdapter(getApplicationContext(), establishments, description);
 
         serviceList.setAdapter(adapter);
 
         serviceList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        Intent mapIntent = new Intent(getApplicationContext(), MapScreen.class);
-                        mapIntent.putExtra("placeToFind", choices.get(position));
-                        startActivity(mapIntent);
-                }
+
+                
+                Intent orderScreen = new Intent(getApplicationContext(), OrderingScreen.class);
+//                orderScreen.putExtra("filterMenus", AppConstants.JOLLIBEE_FILTERS);
+//                orderScreen.putExtra("menus", AppConstants.JOLLIBEE_MENU);
+//                orderScreen.putExtra("prices", AppConstants.JOLLIBEE_PRICES);
+//                orderScreen.putExtra("descripions", AppConstants.JOLLIBEE_DESCRIPTION);
+
+                orderScreen.putExtra("type", type);
+                orderScreen.putExtra("positionClicked", position);
+
+                startActivity(orderScreen);
             }
         });
     }
@@ -92,17 +102,37 @@ public class ServiceScreen extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         filterList.setLayoutManager(mLayoutManager);
 
-        mAdapter = new ServiceFilterListAdapter(getApplicationContext(), filtrers);
+        mAdapter = new ServiceFilterListAdapter(getApplicationContext(), filters);
         filterList.setAdapter(mAdapter);
     }
 
     private void getExtras(){
-        choices = (ArrayList<String>) getIntent().getSerializableExtra("choices");
-        images = (ArrayList<Integer>) getIntent().getSerializableExtra("images");
-        ratings = (ArrayList<Integer>) getIntent().getSerializableExtra("ratings");
-        filtrers = (ArrayList<String>) getIntent().getSerializableExtra("filters");
         description = (String) getIntent().getSerializableExtra("description");
-        screenTitle = (String) getIntent().getSerializableExtra("screen title");
+        type = (String) getIntent().getSerializableExtra("establishmentType");
+        filters = (List<String>) getIntent().getSerializableExtra("filters");
+
+        if (type != null) {
+            establishmentRepository = EstablishmentRepository.getInstance(getApplicationContext());
+            establishments = establishmentRepository.getAllEstablishmentsByType(type);
+        }
+
+        switch (type) {
+            case Establishment.FOOD_SERVICE_CODE:
+                screenTitle = Establishment.FOOD_SERVICE_TYPE;
+                break;
+            case  Establishment.BILLS_PAYMENT_CODE:
+                screenTitle = Establishment.BILLS_PAYMENT_TYPE;
+                break;
+            case Establishment.PHARMACEUTICAL_SERVICE_CODE:
+                screenTitle = Establishment.PHARMACEUTICAL_SERVICE_TYPE;
+                break;
+            case Establishment.SHOPPING_SERVICE_CODE:
+                screenTitle = Establishment.SHOPPING_SERVICE_TYPE;
+                break;
+            case Establishment.TRANSPORTATION_SERVICE_CODE:
+                screenTitle = Establishment.TRANSPORTATION_SERVICE_TYPE;
+                break;
+        }
     }
 
 

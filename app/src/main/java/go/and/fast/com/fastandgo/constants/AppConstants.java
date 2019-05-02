@@ -2,6 +2,8 @@ package go.and.fast.com.fastandgo.constants;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import go.and.fast.com.fastandgo.R;
 
@@ -9,11 +11,7 @@ import go.and.fast.com.fastandgo.R;
  * Created by Jay Paul on 30 Jan 2019.
  */
 
-public final class AppConstants {
-
-    private AppConstants() {
-        // prevent instantiation
-    }
+public class AppConstants {
 
     /**
      * NOTE:
@@ -28,36 +26,31 @@ public final class AppConstants {
 
     // make static data for now
     // TODO change to dynamic data if the app is already released
-    public static final ArrayList<String> FOOD_FILTERS = new ArrayList<>(Arrays.asList("Restaurants","Fast Food Chains","Buffet","Food Courts","Cafeteria"));
-    public static final ArrayList<String> FOOD_CHOICES = new ArrayList<>(Arrays.asList("Jollibee","Mc Donalds","Mang Inasal","Chowking"));
-    public static final ArrayList<Integer> FOOD_IMAGES = new ArrayList<>(Arrays.asList(R.drawable.jollibee_logo, R.drawable.mcdonaldlogo, R.drawable.manginasallogo, R.drawable.chowkinglogo));
-    public static final ArrayList<Integer> FOOD_RATINGS = new ArrayList<>(Arrays.asList(3, 4, 5, 4));
+    public static final ArrayList<String> FOOD_FILTERS = new ArrayList<>(Arrays.asList("Fast Food Restaurant","Buffet","Food Courts","Cafeteria"));
 
     // make static data for now
     // TODO change to dynamic data if the app is already released
     public static final ArrayList<String> SHOPPING_FILTERS = new ArrayList<>(Arrays.asList("Clothing","Shoes","Jeans","Caps","Swim wears"));
-    public static final ArrayList<String> SHOPPING_CHOICES = new ArrayList<>(Arrays.asList("Uniqlo","Bench","Folded & Hung","Tribal"));
-    public static final ArrayList<Integer> SHOPPING_IMAGES = new ArrayList<>(Arrays.asList(R.drawable.uniqlo_logo, R.drawable.bench_logo, R.drawable.folded_hung_logo, R.drawable.tribal_logo));
-    public static final ArrayList<Integer> SHOPPING_RATINGS = new ArrayList<>(Arrays.asList(3, 4, 5, 4));
 
     // make static data for now
     // TODO change to dynamic data if the app is already released
     public static final ArrayList<String> TRANSPO_FILTERS = new ArrayList<>(Arrays.asList("Buses","Trains","Ships","Airplanes","Taxis"));
-    public static final ArrayList<String> TRANSPO_CHOICES = new ArrayList<>(Arrays.asList("Jac Liner","Solid North","Five Star Bus Co.","Victory Liner"));
-    public static final ArrayList<Integer> TRANSPO_IMAGES = new ArrayList<>(Arrays.asList(R.drawable.jac_liner_logo, R.drawable.solid_north_logo, R.drawable.fivestart_liner_logo, R.drawable.victory_liner_logo));
-    public static final ArrayList<Integer> TRANSPO_RATINGS = new ArrayList<>(Arrays.asList(3, 4, 5, 4));
 
     // make static data for now
     // TODO change to dynamic data if the app is already released
     public static final ArrayList<String> BILLS_FILTERS = new ArrayList<>(Arrays.asList("Network bills","Electricity bills","Water Bills","NBI clearance"));
-    public static final ArrayList<String> BILLS_CHOICES = new ArrayList<>(Arrays.asList("Smart Telecom","Globe Telecom","PLDT","Converge"));
-    public static final ArrayList<Integer> BILLS_IMAGES = new ArrayList<>(Arrays.asList(R.drawable.smart_logo, R.drawable.globe, R.drawable.pldt_logo, R.drawable.converge_logo));
-    public static final ArrayList<Integer> BILLS_RATINGS = new ArrayList<>(Arrays.asList(3, 4, 5, 4));
 
     // make static data for now
     // TODO change to dynamic data if the app is already released
     public static final ArrayList<String> PHARMA_FILTERS = new ArrayList<>(Arrays.asList("Medicine","Vitamins","Beauty Products","Hospital Equipments"));
-    public static final ArrayList<String> PHARMA_CHOICES = new ArrayList<>(Arrays.asList("Watsons","Mercury Drug","The Generics Pharmacy"));
-    public static final ArrayList<Integer> PHARMA_IMAGES = new ArrayList<>(Arrays.asList(R.drawable.watsons_logo, R.drawable.mercury_drug_logo, R.drawable.tgp_logo));
-    public static final ArrayList<Integer> PHARMA_RATINGS = new ArrayList<>(Arrays.asList(3, 4, 5, 4));
+
+    public static final ArrayList<String> JOLLIBEE_FILTERS = new ArrayList<>(Arrays.asList("Burgers","Super Meals","Drinks","Breakfast Meals", "Bucket Meals", "Chicken Joy"));
+    public static final ArrayList<String> JOLLIBEE_MENU = new ArrayList<>(Arrays.asList("C1","B2","C3","A3","C2","B1"));
+    public static final ArrayList<String> JOLLIBEE_DESCRIPTION = new ArrayList<>(Arrays.asList("1-pc. Chickenjoy (Solo)","1-pc. Chickenjoy with Jolly Spaghetti (Solo)","1-pc. Chickenjoy with Palabok (Solo)","Yum Cheese burger"));
+    public static final ArrayList<String> JOLLIBEE_PRICES = new ArrayList<>(Arrays.asList("PHP 100","PHP 110","PHP 120","PHP 45","PHP 100","PHP 120"));
+    public static final ArrayList<String> JOLLIBEE_BURGERS = new ArrayList<>(Arrays.asList("Yum Burger (Solo)", "Yum Cheese Burger"));
+    private AppConstants() {
+        // to prevent instantiation
+    }
+
 }
