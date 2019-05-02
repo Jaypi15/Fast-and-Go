@@ -1,6 +1,8 @@
 package go.and.fast.com.fastandgo.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +12,13 @@ import android.widget.TextView;
 
 import com.willy.ratingbar.ScaleRatingBar;
 
+import java.nio.FloatBuffer;
 import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import go.and.fast.com.fastandgo.R;
+import go.and.fast.com.fastandgo.model.entity.Establishment;
 
 /**
  * Created by Jay Paul on 30 Jan 2019.
@@ -22,22 +27,18 @@ import go.and.fast.com.fastandgo.R;
 public class ServiceMenuListAdapter extends BaseAdapter {
 
     private Context context;
-    private ArrayList<String> choices;
-    private ArrayList<Integer> images;
-    private ArrayList<Integer> ratings;
+    private List<Establishment> establishments;
     private String description;
 
-    public ServiceMenuListAdapter(Context context, ArrayList<String> choices, ArrayList<Integer> images, ArrayList<Integer> ratings, String description) {
-        this.choices = choices;
-        this.images = images;
+    public ServiceMenuListAdapter(Context context, List<Establishment> establishments, String description) {
         this.context = context;
-        this.ratings = ratings;
         this.description = description;
+        this.establishments = establishments;
     }
 
     @Override
     public int getCount() {
-        return choices.size();
+        return establishments.size();
     }
 
     @Override
@@ -61,15 +62,17 @@ public class ServiceMenuListAdapter extends BaseAdapter {
 
         CircleImageView logo = convertView.findViewById(R.id.logo);
         // set image in ImageView according to position of the item
-        logo.setImageResource(images.get(position));
+        Bitmap bmp = BitmapFactory.decodeByteArray(establishments.get(position).getLogo(), 0, establishments.get(position).getLogo().length);
+        logo.setImageBitmap(Bitmap.createScaledBitmap(bmp, bmp.getWidth(),
+                bmp.getHeight(), false));
 
         // set text for textView according to the position of the item
         TextView label = convertView.findViewById(R.id.establishmentNameTxt);
-        label.setText(choices.get(position));
+        label.setText(establishments.get(position).getEstablishmentName());
 
         // set scale rating according to position
         ScaleRatingBar scaleRatingBar = convertView.findViewById(R.id.ratingBar);
-        scaleRatingBar.setRating(ratings.get(position));
+        scaleRatingBar.setRating((float)establishments.get(position).getRating());
         scaleRatingBar.setClickable(false);
         scaleRatingBar.setActivated(false);
         scaleRatingBar.setClickable(false);

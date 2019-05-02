@@ -3,10 +3,10 @@
     package="go.and.fast.com.fastandgo">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="com.google.android.providers.gsf.permisson.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permisson.READ_GSERVICES" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +17,10 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDCa5WRSMk3CrNSf3y5xbyQTvp1_zwuTtE" />
+            android:value="AIzaSyA7NoKypC-T9b3anX4osSELqgBJzL22sVA" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".MainActivity">
 
@@ -30,6 +33,7 @@
             -->
 
         </activity>
+
         <activity
             android:name=".Screen.MainMenuScreen"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
@@ -39,11 +43,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".Screen.ServiceScreen"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
-        <activity android:name=".Screen.MapScreen"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+
+        <activity android:name=".Screen.MapScreen"/>
+
+        <activity android:name=".Screen.OrderingScreen"
+                  android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+
     </application>
 
 </manifest>

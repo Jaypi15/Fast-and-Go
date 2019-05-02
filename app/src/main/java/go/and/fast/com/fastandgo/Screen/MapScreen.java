@@ -1,6 +1,7 @@
 package go.and.fast.com.fastandgo.Screen;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -13,8 +14,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Toast;
 
+import com.github.javiersantos.bottomdialogs.BottomDialog;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -30,6 +34,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.List;
 
 import go.and.fast.com.fastandgo.R;
@@ -48,7 +53,7 @@ public class MapScreen extends FragmentActivity implements OnMapReadyCallback,
     public static final int REQUEST_LOCATION_CODE = 99;
     int PROXIMITY_RADIUS = 10000;
     double latitude,longitude;
-    private String placeToFind;
+    private String placeToFind, placeType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,12 +71,11 @@ public class MapScreen extends FragmentActivity implements OnMapReadyCallback,
         mapFragment.getMapAsync(this);
 
         extractExtra();
-
-        showNearbyEstablisment(placeToFind);
     }
 
     private void extractExtra() {
         placeToFind = (String) getIntent().getSerializableExtra("placeToFind");
+        placeType = (String) getIntent().getSerializableExtra("placeType");
     }
 
     @Override
@@ -113,6 +117,7 @@ public class MapScreen extends FragmentActivity implements OnMapReadyCallback,
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             bulidGoogleApiClient();
             mMap.setMyLocationEnabled(true);
+            showNearbyEstablisment(placeToFind);
         }
     }
 
@@ -155,87 +160,47 @@ public class MapScreen extends FragmentActivity implements OnMapReadyCallback,
         Object dataTransfer[] = new Object[2];
         NearByPlaceFinder getNearbyPlacesData = new NearByPlaceFinder();
 
+
         List<Address> addressList;
+        Log.d("MapsActivity", "place to find: " + placeToFind);
 
         if(!placeToFind.equals("")) {
+
             Geocoder geocoder = new Geocoder(this);
 
             try {
                 addressList = geocoder.getFromLocationName(placeToFind, 5);
 
-                if(addressList != null) {
-                    for(int i = 0;i<addressList.size();i++) {
+                Log.d("MapsActivity", "address list: " + addressList.toString());
+
+                if (addressList != null && !addressList.isEmpty()) {
+                    for(int i = 0;i<addressList.size();i++)
+                    {
                         LatLng latLng = new LatLng(addressList.get(i).getLatitude() , addressList.get(i).getLongitude());
                         MarkerOptions markerOptions = new MarkerOptions();
                         markerOptions.position(latLng);
                         markerOptions.title(placeToFind);
                         mMap.addMarker(markerOptions);
                         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-                        mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+                        mMap.animateCamera(CameraUpdateFactory.zoomBy(500));
                     }
+                } else {
+                    LatLng latLng = new LatLng(latitude, longitude);
+                    String url = getUrl(latitude, longitude, placeToFind);
+                    dataTransfer[0] = mMap;
+                    dataTransfer[1] = url;
+
+                    getNearbyPlacesData.execute(dataTransfer);
+                    mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                    mMap.animateCamera(CameraUpdateFactory.zoomBy(500));
+                    Toast.makeText(MapScreen.this, "Showing Nearby" + placeToFind, Toast.LENGTH_SHORT).show();
                 }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-//                {
-//                    Geocoder geocoder = new Geocoder(this);
-//
-//                    try {
-//                        addressList = geocoder.getFromLocationName(location, 5);
-//
-//                        if(addressList != null)
-//                        {
-//                            for(int i = 0;i<addressList.size();i++)
-//                            {
-//                                LatLng latLng = new LatLng(addressList.get(i).getLatitude() , addressList.get(i).getLongitude());
-//                                MarkerOptions markerOptions = new MarkerOptions();
-//                                markerOptions.position(latLng);
-//                                markerOptions.title(location);
-//                                mMap.addMarker(markerOptions);
-//                                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-//                                mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
-//                            }
-//                        }
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//                break;
-//            case R.id.B_hopistals:
-//                mMap.clear();
-//                String hospital = "hospital";
-//                String url = getUrl(latitude, longitude, hospital);
-//                dataTransfer[0] = mMap;
-//                dataTransfer[1] = url;
-//
-//                getNearbyPlacesData.execute(dataTransfer);
-//                Toast.makeText(MapsActivity.this, "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
-//                break;
-//
-//
-//            case R.id.B_schools:
-//                mMap.clear();
-//                String school = "school";
-//                url = getUrl(latitude, longitude, school);
-//                dataTransfer[0] = mMap;
-//                dataTransfer[1] = url;
-//
-//                getNearbyPlacesData.execute(dataTransfer);
-//                Toast.makeText(MapsActivity.this, "Showing Nearby Schools", Toast.LENGTH_SHORT).show();
-//                break;
-//            case R.id.B_restaurants:
-//                mMap.clear();
-//                String resturant = "restuarant";
-//                url = getUrl(latitude, longitude, resturant);
-//                dataTransfer[0] = mMap;
-//                dataTransfer[1] = url;
-//
-//                getNearbyPlacesData.execute(dataTransfer);
-//                Toast.makeText(MapsActivity.this, "Showing Nearby Restaurants", Toast.LENGTH_SHORT).show();
-//                break;
-//            case R.id.B_to:
 
+        }
     }
 
 
@@ -245,9 +210,10 @@ public class MapScreen extends FragmentActivity implements OnMapReadyCallback,
         StringBuilder googlePlaceUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         googlePlaceUrl.append("location="+latitude+","+longitude);
         googlePlaceUrl.append("&radius="+PROXIMITY_RADIUS);
-        googlePlaceUrl.append("&type="+nearbyPlace);
+        googlePlaceUrl.append("&keyword="+nearbyPlace.replaceAll(" ", "%20"));
         googlePlaceUrl.append("&sensor=true");
-        googlePlaceUrl.append("&key="+"AIzaSyBLEPBRfw7sMb73Mr88L91Jqh3tuE4mKsE");
+        googlePlaceUrl.append("&type="+placeType.replaceAll(" ", "%20"));
+        googlePlaceUrl.append("&key="+"AIzaSyA7NoKypC-T9b3anX4osSELqgBJzL22sVA");
 
         Log.d("MapsActivity", "url = "+googlePlaceUrl.toString());
 
@@ -268,7 +234,6 @@ public class MapScreen extends FragmentActivity implements OnMapReadyCallback,
             LocationServices.FusedLocationApi.requestLocationUpdates(client, locationRequest, this);
         }
     }
-
 
     public boolean checkLocationPermission()
     {
@@ -297,5 +262,50 @@ public class MapScreen extends FragmentActivity implements OnMapReadyCallback,
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+    }
+
+    private void showPopUpWindow(String placeName, String distance, String address){
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View customView = inflater.inflate(R.layout.map_popup_screen, null);
+
+
+        new BottomDialog.Builder(this)
+                .setTitle("Information")
+                .setCustomView(customView)
+                .setNegativeText("View Direction")
+                .setNegativeTextColor(R.color.colorPrimary)
+                .onNegative(new BottomDialog.ButtonCallback() {
+                   @Override
+                   public void onClick(@NonNull BottomDialog bottomDialog) {
+                       // do directions
+                   }
+               })
+                .show();
+
+    }
+
+    private double CalculationByDistance(LatLng StartP, LatLng EndP) {
+        int Radius = 6371;// radius of earth in Km
+        double lat1 = StartP.latitude;
+        double lat2 = EndP.latitude;
+        double lon1 = StartP.longitude;
+        double lon2 = EndP.longitude;
+        double dLat = Math.toRadians(lat2 - lat1);
+        double dLon = Math.toRadians(lon2 - lon1);
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2)
+                + Math.cos(Math.toRadians(lat1))
+                * Math.cos(Math.toRadians(lat2)) * Math.sin(dLon / 2)
+                * Math.sin(dLon / 2);
+        double c = 2 * Math.asin(Math.sqrt(a));
+        double valueResult = Radius * c;
+        double km = valueResult / 1;
+        DecimalFormat newFormat = new DecimalFormat("####");
+        int kmInDec = Integer.valueOf(newFormat.format(km));
+        double meter = valueResult % 1000;
+        int meterInDec = Integer.valueOf(newFormat.format(meter));
+        Log.i("Radius Value", "" + valueResult + "   KM  " + kmInDec
+                + " Meter   " + meterInDec);
+
+        return Radius * c;
     }
 }

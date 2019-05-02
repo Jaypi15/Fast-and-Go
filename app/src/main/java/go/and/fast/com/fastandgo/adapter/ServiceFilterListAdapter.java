@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import go.and.fast.com.fastandgo.R;
 
@@ -19,43 +20,12 @@ import go.and.fast.com.fastandgo.R;
 public class ServiceFilterListAdapter extends RecyclerView.Adapter<ServiceFilterListAdapter.ViewHolder> {
 
     private Context context;
-    private ArrayList<String> filterTxt;
+    private List<String> filterTxt;
 
-    public ServiceFilterListAdapter(Context context, ArrayList<String> filterTxt) {
+    public ServiceFilterListAdapter(Context context, List<String> filterTxt) {
         this.context = context;
         this.filterTxt = filterTxt;
     }
-
-//    @Override
-//    public int getCount() {
-//        return filterTxt.size();
-//    }
-//
-//    @Override
-//    public Object getItem(int position) {
-//        return null;
-//    }
-//
-//    @Override
-//    public long getItemId(int position) {
-//        return 0;
-//    }
-//
-//    @Override
-//    public View getView(int position, View convertView, ViewGroup parent) {
-//
-//
-//        if (convertView == null) {
-//            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//            convertView = inflater.inflate(R.layout.service_menu_filter_list, null);
-//        }
-//
-//        // set text for textView according to the position of the item
-//        TextView label = convertView.findViewById(R.id.filterTxt);
-//        label.setText(filterTxt.get(position));
-//
-//        return convertView;
-//    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {

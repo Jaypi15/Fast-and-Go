@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:background="@drawable/order_choices_bg"
+        android:padding="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/productImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/foodplaceholder"
+            app:civ_border_color="@android:color/background_light"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/productNameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/productImage"
+            android:layout_centerHorizontal="true"
+            android:autoText="false"
+            android:text="Product Name"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:background="@android:color/holo_green_dark"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/priceTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="false"
+                android:layout_gravity="center"
+                android:text="PHP 0.00"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="200dp"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:padding="5dp">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/productImage"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--app:srcCompat="@drawable/foodplaceholder" />-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/productNameLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:alpha="0.6"-->
+    <!--android:background="@android:color/black"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:padding="5dp">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/productNameTxt"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="Bucket Meal"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="15sp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/priceLayout"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="false"-->
+    <!--android:layout_below="@+id/productNameLayout"-->
+    <!--android:alpha="0.7"-->
+    <!--android:background="@android:color/holo_green_dark"-->
+    <!--android:orientation="vertical"-->
+    <!--android:padding="5dp">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/priceTxt"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="PHP 00.00"-->
+    <!--android:textColor="@android:color/white" />-->
+    <!--</LinearLayout>-->
+    <!--</RelativeLayout>-->
+
+</RelativeLayout>
